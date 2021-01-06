@@ -24,11 +24,11 @@ description              : ""
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+teaser                   : "/assets/images/bio-photo.jpg"
+logo                     : "/assets/favicon/favicon-32x32.png"
 favicon_path             : /assets/favicon
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
@@ -100,6 +100,15 @@ author:
   location         : 
   email            : 
   links:
+    - label: "Resume"
+      icon: "fab far fa-address-card"
+      url: "https://github.com/junhee-yoo/resume/releases/latest/download/jhyoo_cv.pdf"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/junhee-yoo"    
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/kailieu/"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
@@ -122,21 +131,12 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Linkedin"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/kailieu/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/junhee-yoo"
-    - label: "Resume"
-      icon: "fab far fa-address-card"
-      url: "https://github.com/junhee-yoo/resume/releases/latest/download/jhyoo_cv.pdf"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -272,17 +272,28 @@ compress_html:
   ignore:
     envs: development
 
-
 # Defaults
 defaults:
+  - scope:
+      path: ""
+    values:
+      sidebar:
+        nav: "sidebar"
   # _posts
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: "single"
       author_profile: true
       read_time: true
       comments: # true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true

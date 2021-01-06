@@ -1,12 +1,20 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "About"
+    url: /about/
+  - title: "Posts by Years"
+    url: /year-archive/
+  - title: "Posts by Tags"
+    url: /tags/
+
+sidebar:
+  - title: Machine Learning
+    children:
+      - title: ML Compilers
+        text: ML Compilers
+        url: /categories/ml-compilers
+  - title: Software Engineering
+    children:
+      - title: Software Architectures
+        text: Software Architectures
+        url: /categories/sw-architectures
